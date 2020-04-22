@@ -6,15 +6,15 @@ USE employee_db;
 
 CREATE TABLE departments (
     id INTEGER AUTO_INCREMENT NOT NULL PRIMARY KEY,
-    dept VARCHAR(30) NOT NULL
+    name VARCHAR(30) NOT NULL
 );
 
 CREATE TABLE roles (
     id INTEGER AUTO_INCREMENT NOT NULL PRIMARY KEY,
     title VARCHAR(30) NOT NULL,
     salary DECIMAL NOT NULL,
-    dept_id INTEGER NOT NULL,
-    FOREIGN KEY (dept_id) REFERENCES departments(id) ON DELETE CASCADE
+    department_id INTEGER NOT NULL,
+    FOREIGN KEY (department_id) REFERENCES departments(id) ON DELETE CASCADE
 );
 
 CREATE TABLE employees (
